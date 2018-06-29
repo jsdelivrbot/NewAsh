@@ -8,12 +8,12 @@ bot.on("ready", async() =>{
 
 bot.on("message", async message =>{
 if(message.author.bot) return;
+var msg = message.content.toLowerCase();
+if(msg.indexOf(config.prefix)!== 0) return;
+const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
 
-let messageArray = message.content.split(" ");
-let cmd = messageArray[0];
-let args = messageArray[1].slice(1);
-
-if(cmd === `${config.prefix}ping`){
+if(command === `ping`){
   message.reply("pong");
 }
 });
