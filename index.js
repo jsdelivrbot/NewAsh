@@ -6,4 +6,4 @@ bot.on("ready", async() =>{
 });
 
 
-bot.login(TOKEN);
+bot.login(process.env.TOKEN);
