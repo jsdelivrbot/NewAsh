@@ -1,10 +1,8 @@
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
+const Discord = require("discord.js");
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+bot.on("ready", async() =>{
+  console.log("Я готов!");
+});
+
+
+bot.login(TOKEN);
