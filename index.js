@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const prefix = "ash ";
+require('dotenv').config();
 bot = new Discord.Client();
 
 bot.on("ready", async() =>{
@@ -13,7 +13,7 @@ let messageArray = message.content.split(" ");
 let cmd = messageArray[0];
 let args = messageArray[1].slice(1);
 
-if(cmd === `${prefix}ping`){
+if(cmd === `${process.env.prefix} ping`){
   message.reply("pong");
 }
 });
