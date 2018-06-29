@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-require('dotenv').config();
+const config = require("./config.json")
 bot = new Discord.Client();
 
 bot.on("ready", async() =>{
@@ -13,9 +13,9 @@ let messageArray = message.content.split(" ");
 let cmd = messageArray[0];
 let args = messageArray[1].slice(1);
 
-if(cmd === `${process.env.prefix} ping`){
+if(cmd === `${config.prefix}ping`){
   message.reply("pong");
 }
 });
 
-bot.login(process.env.TOKEN);
+bot.login(config.token);
