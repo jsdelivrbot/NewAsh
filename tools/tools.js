@@ -19,29 +19,29 @@ module.exports = {
     },
     queues: function (queue) {
         var all = {
-            'conquest5v5' : 423,
-            'novicequeue' : 424,
+            // 'conquest5v5' : 423,
+            // 'novicequeue' : 424,
             'conquest' : 426,
-            'practice' : 427,
-            'conquestchallenge' : 429,
+            // 'practice' : 427,
+            // 'conquestchallenge' : 429,
             'conquestranked' : 430,
             'domination' : 433,
-            'motd1' : 434,
+            // 'motd1' : 434,
             'arena' : 435,
-            'arenachallenge' : 438,
-            'dominationchallenge' : 439,
+            // 'arenachallenge' : 438,
+            // 'dominationchallenge' : 439,
             'joustranked' : 440,
-            'joustchallenge' : 441,
+            // 'joustchallenge' : 441,
             'assault' : 445,
-            'assaultchallenge' : 446,
-            'joust3v3' : 448,
-            'joustranked3v3' : 450,
+            // 'assaultchallenge' : 446,
+            'joust' : 448,
+            'joustranked' : 450,
             'conquestranked' : 451,
-            'arenaleague' : 452,
-            'motd2' : 465,
+            // 'arenaleague' : 452,
+            // 'motd2' : 465,
             'siege' : 459,
             'clash' : 466,
-            'clashchallenge' : 467
+            // 'clashchallenge' : 467
             };
         if(queue){
             return all[queue];
