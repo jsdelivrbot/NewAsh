@@ -22,5 +22,8 @@ module.exports.run = async (bot, message, args, con) => {
 }
 
 module.exports.help = {
-    name: "randomteam"
+    name: "randomteam",
+    description: "empty",
+    hide: "0",
+    usage: "ash loot"
 }

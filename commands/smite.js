@@ -52,5 +52,8 @@ module.exports.run = async (bot, message, args, con) => {
 }
 
 module.exports.help = {
-    name: "smite"
+    name: "smite",
+    description: "empty",
+    hide: "0",
+    usage: "ash loot"
 }
