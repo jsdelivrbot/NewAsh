@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const smitetrash = require("../tools/smite/smite-api");
 const smite = new smitetrash("2561", "51DD07223CC04D6683A2AC6F03A56A6A");
 const tool = require("../tools/tools.js");
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, args, con) => {
     var allq = "";
     for (var q in tool.queues()) {
         allq += q+" ";

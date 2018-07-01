@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const config = require("./config.json")
 const fs = require('fs');
+var mysql = require('mysql');
 bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 fs.readdir("./commands/", (err, files) =>{
@@ -18,7 +19,17 @@ fs.readdir("./commands/", (err, files) =>{
     bot.commands.set(props.help.name, props);
   });
 })
+var con = mysql.createConnection({
+  host: "sql9.freemysqlhosting.net",
+  user: "sql9245488",
+  password: "rnLl6FcxIE",
+  database: "sql9245488"
+});
 
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
 bot.on("ready", async() =>{
   console.log(`${bot.user.username} готов!`);
 });
@@ -34,6 +45,6 @@ bot.on("message", async message =>{
   var command = args.shift().toLowerCase();
 
   let commandfile = bot.commands.get(command);
-  if(commandfile) commandfile.run(bot,message,args);
+  if(commandfile) commandfile.run(bot,message,args,con);
 });
 bot.login(config.token);

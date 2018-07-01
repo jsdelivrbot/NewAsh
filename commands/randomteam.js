@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const tool = require("../tools/tools.js");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, args, con) => {
     var cArray = args.join(" ").split(" ");
     if(cArray.length === 10){
      cArray = tool.shuffle(cArray);
