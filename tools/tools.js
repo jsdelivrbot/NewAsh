@@ -17,6 +17,15 @@ module.exports = {
       
         return array;
     },
+    declOfNum: function(number,titles){
+        let cases = [2, 0, 1, 1, 1, 2];  
+        return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5] ];
+    },
+    randomInteger: function(min,max){
+        var rand = min - 0.5 + Math.random() * (max - min + 1)
+        rand = Math.round(rand);
+        return rand;
+    },
     queues: function (queue) {
         var all = {
             // 'conquest5v5' : 423,
