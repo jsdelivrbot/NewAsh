@@ -18,7 +18,10 @@ module.exports.run = async (bot, message, args, con) => {
         .addField("Поинты", row.points)
         .addField("W/L", row.duel_win+'/'+row.duel_lose+' - '+perc*100+'%')
         .addField("Обо мне", row.about);
+        
+        message.channel.send(profileEmbed);
     });
+
 }
 
 module.exports.help = {
