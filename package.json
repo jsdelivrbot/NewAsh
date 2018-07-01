@@ -18,7 +18,8 @@
     "nodemon": "^1.17.5",
     "fetch": "^1.1.0",
     "md5": "^2.2.1",
-    "moment": "^2.17.1"
+    "moment": "^2.17.1",
+    "mysql": "*"
   },
   "devDependencies": {
     "request": "^2.81.0",
