@@ -12,13 +12,13 @@ module.exports.run = async (bot, message, args, con) => {
         let profileEmbed = new Discord.RichEmbed()
         .setDescription(row.xp+"/"+(Math.floor(row.xp/100)+1)+'00 XP')
         .setAuthor(message.author.username)
-        .setTitle("LVL "+Math.floor(row.xp/100)
+        .setTitle("LVL "+Math.floor(row.xp/100))
         .setThumbnail(message.author.avatarURL)
         .setColor("#15f153")
         .addField("Поинты", row.points)
         .addField("W/L", row.duel_win+'/'+row.duel_lose+' - '+perc*100+'%')
-        .addField("Обо мне", row.about)
-        });
+        .addField("Обо мне", row.about);
+    });
 }
 
 module.exports.help = {
