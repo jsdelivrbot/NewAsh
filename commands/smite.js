@@ -7,7 +7,6 @@ module.exports.run = async (bot, message, args) => {
     for (var q in tool.queues()) {
         allq += q+" ";
     }
-    console.log(allq);
     if(tool.queues(args[0]) === undefined){
         message.reply("Ошибка! Такой режим не найден. Доступные режимы: ```"+allq+"```");
     }
