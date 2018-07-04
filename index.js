@@ -49,9 +49,9 @@ bot.on("message", async message =>{
     let jsfile = files.filter(f=> f.split(".").pop() === "js");
     var commandfile;
     jsfile.forEach((f, i) =>{
-      if(tool.leven(command,f) <= 1){
-        console.log(tool.leven(command,f));
-        commandfile = bot.commands.get(f);}
+      if(tool.leven(command,f.slice(-3)) <= 1){
+        console.log(tool.leven(command,f.slice(-3)));
+        commandfile = bot.commands.get(f.slice(-3));}
     });
     if(commandfile) commandfile.run(bot,message,args,con);
   })
