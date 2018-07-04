@@ -51,9 +51,10 @@ bot.on("message", async message =>{
     jsfile.forEach((f, i) =>{
       if(tool.leven(command,f.slice(-3)) <= 1){
         console.log(tool.leven(command,f.slice(-3)));
-        commandfile = bot.commands.get(f.slice(-3));}
+        commandfile = bot.commands.get(f.slice(-3));
+        if(commandfile) commandfile.run(bot,message,args,con);
+      }
     });
-    if(commandfile) commandfile.run(bot,message,args,con);
   })
 });
 bot.login(config.token);
