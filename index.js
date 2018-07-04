@@ -39,22 +39,17 @@ bot.on("message", async message =>{
   if(message.author.bot) return;
   let prefix = config.prefix;
   let msg = message.content.toLowerCase();
-  if(msg.indexOf(prefix)!== 0) return;
+  if(tool.leven(prefix,msg.split(" ")[0]) <= 1) return;
 
 
   var args = msg.slice(prefix.length).trim().split(/ +/g);
   var command = args.shift().toLowerCase();
-  fs.readdir("./commands/", (err, files) =>{
-    if(err) console.log(err);
-    let jsfile = files.filter(f=> f.split(".").pop() === "js");
-    var commandfile;
-    jsfile.forEach((f, i) =>{
-      if(tool.leven(command,f.slice(-3)) <= 1){
-        console.log(tool.leven(command,f.slice(-3)));
-        commandfile = bot.commands.get(f.slice(-3));
-        if(commandfile) commandfile.run(bot,message,args,con);
-      }
-    });
-  })
+  var commandfile;
+  for (var [key] of bot.commands) {
+    if(tool.leven(command,key) <= 1){
+    commandfile = bot.commands.get(key);
+    }
+  }
+  if(commandfile) commandfile.run(bot,message,args,con);
 });
 bot.login(config.token);
