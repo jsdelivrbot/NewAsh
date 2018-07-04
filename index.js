@@ -50,7 +50,8 @@ bot.on("message", async message =>{
     var commandfile;
     jsfile.forEach((f, i) =>{
       if(tool.leven(command,f) <= 1){
-      commandfile = bot.commands.get(f);}
+        console.log(tool.leven(command,f));
+        commandfile = bot.commands.get(f);}
     });
     if(commandfile) commandfile.run(bot,message,args,con);
   })
