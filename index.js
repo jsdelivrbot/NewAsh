@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const config = require("./config.json")
 const fs = require('fs');
+const tool = require("./tools/tools");
 var mysql = require('mysql');
 bot = new Discord.Client();
 bot.commands = new Discord.Collection();
@@ -43,8 +44,15 @@ bot.on("message", async message =>{
 
   var args = msg.slice(prefix.length).trim().split(/ +/g);
   var command = args.shift().toLowerCase();
-
-  let commandfile = bot.commands.get(command);
-  if(commandfile) commandfile.run(bot,message,args,con);
+  fs.readdir("./commands/", (err, files) =>{
+    if(err) console.log(err);
+    let jsfile = files.filter(f=> f.split(".").pop() === "js");
+    var commandfile;
+    jsfile.forEach((f, i) =>{
+      if(tool.leven(command,f) <= 1){
+      commandfile = bot.commands.get(f);}
+    });
+    if(commandfile) commandfile.run(bot,message,args,con);
+  })
 });
 bot.login(config.token);
