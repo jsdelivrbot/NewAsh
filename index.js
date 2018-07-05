@@ -21,7 +21,7 @@ fs.readdir("./commands/", (err, files) =>{
   });
 })
 var con = mysql.createConnection({
-  host: "sql9.freemysqlhosting.net",
+  host: "ashbot.ru.xsph.ru",
   user: "a0218436_ashbot",
   password: "tX1WDIlp",
   database: "a0218436_ashbot"
