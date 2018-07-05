@@ -22,8 +22,8 @@ module.exports.run = async (bot, message, args, con) => {
 }
 
 module.exports.help = {
-    name: "randomteam",
+    name: "команда",
     description: "empty",
     hide: "0",
-    usage: "ash loot"
+    usage: "эш команда <перечислить 6, 8 или 10 участников через пробел>"
 }

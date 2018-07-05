@@ -22,9 +22,9 @@ fs.readdir("./commands/", (err, files) =>{
 })
 var con = mysql.createConnection({
   host: "sql9.freemysqlhosting.net",
-  user: "sql9245488",
-  password: "rnLl6FcxIE",
-  database: "sql9245488"
+  user: "a0218436_ashbot",
+  password: "tX1WDIlp",
+  database: "a0218436_ashbot"
 });
 
 con.connect(function(err) {
@@ -37,6 +37,7 @@ bot.on("ready", async() =>{
 
 bot.on("message", async message =>{
   if(message.author.bot) return;
+  if(message.author.id != 161854983602438145) return;
   let prefix = config.prefix;
   let msg = message.content.toLowerCase();
   // if(tool.leven(prefix,msg.split(" ")[0]) <= 1) return;

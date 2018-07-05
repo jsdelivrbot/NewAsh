@@ -6,8 +6,8 @@ module.exports.run = async (bot, message, args, con) => {
 }
 
 module.exports.help = {
-    name: "ping",
+    name: "эш пинг",
     description: "empty",
-    hide: "0",
-    usage: "ash loot"
+    hide: "1",
+    usage: "эш пинг"
 }

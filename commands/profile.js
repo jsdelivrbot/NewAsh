@@ -24,8 +24,8 @@ module.exports.run = async (bot, message, args, con) => {
 }
 
 module.exports.help = {
-    name: "profile",
+    name: "профиль",
     description: "empty",
     hide: "0",
-    usage: "ash loot"
+    usage: "эш профиль"
 }

@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args, con) => {
         jsfile.forEach((f, i) =>{
           let props = require(`./${f}`);
           
-            profileEmbed.addField(props.help.name, props.help.description);
+            profileEmbed.addField(props.help.name, props.help.usage);
           
         });
         message.channel.send(profileEmbed);
@@ -23,8 +23,8 @@ module.exports.run = async (bot, message, args, con) => {
 }
 
 module.exports.help = {
-    name: "help",
+    name: "помощь",
     description: "empty",
     hide: "0",
-    usage: "ash loot"
+    usage: "эш помощь"
 }

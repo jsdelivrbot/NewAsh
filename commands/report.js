@@ -2,20 +2,20 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, con) => {
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUser) return message.channel.send("Couldn't find user.");
+    if(!rUser) return message.channel.send("Не могу найти такого пользователя");
     let rreason = args.join(" ").slice(22);
 
     let reportEmbed = new Discord.RichEmbed()
-    .setDescription("Reports")
+    .setDescription("Жалобы")
     .setColor("#15f153")
-    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
-    .addField("Reported By", `${message.author} with ID: ${message.author.id}`)
-    .addField("Channel", message.channel)
-    .addField("Time", message.createdAt)
-    .addField("Reason", rreason);
+    .addField("Жалоба на", `${rUser} ID: ${rUser.id}`)
+    .addField("От пользоателя", `${message.author} ID: ${message.author.id}`)
+    .addField("Канал", message.channel)
+    .addField("Время", message.createdAt)
+    .addField("Причина", rreason);
 
-    let reportschannel = message.guild.channels.find(`name`, "reports");
-    if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
+    let reportschannel = message.guild.channels.find(`name`, "bot-test");
+    if(!reportschannel) return message.channel.send("Не могу найти канал текстовой канал 'bot-test'");
 
 
     message.delete().catch(O_o=>{});
@@ -23,8 +23,8 @@ module.exports.run = async (bot, message, args, con) => {
 }
 
 module.exports.help = {
-    name: "report",
+    name: "репорт",
     description: "empty",
     hide: "0",
-    usage: "ash loot"
+    usage: "эш репорт <@пользователь> <причина>"
 }

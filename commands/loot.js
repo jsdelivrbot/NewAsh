@@ -51,8 +51,8 @@ module.exports.run = async (bot, message, args, con) => {
 }
 
 module.exports.help = {
-    name: "loot",
+    name: "лут",
     description: "empty",
     hide: "0",
-    usage: "ash loot"
+    usage: "эш лут"
 }
