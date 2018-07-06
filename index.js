@@ -37,7 +37,6 @@ bot.on("ready", async() =>{
 
 bot.on("message", async message =>{
   if(message.author.bot) return;
-  if(message.author.id != 161854983602438145) return;
   let prefix = config.prefix;
   let msg = message.content.toLowerCase();
   // if(tool.leven(prefix,msg.split(" ")[0]) <= 1) return;
