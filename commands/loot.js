@@ -51,7 +51,7 @@ module.exports.run = async (bot, message, args, con) => {
 }
 
 module.exports.help = {
-    name: "лут",
+    name: "лут1",
     description: "empty",
     hide: "0",
     usage: "эш лут"
