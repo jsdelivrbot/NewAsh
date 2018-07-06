@@ -14,8 +14,8 @@ module.exports.run = async (bot, message, args, con) => {
     .addField("Время", message.createdAt)
     .addField("Причина", rreason);
 
-    let reportschannel = message.guild.channels.find(`name`, "bot-test");
-    if(!reportschannel) return message.channel.send("Не могу найти канал текстовой канал 'bot-test'");
+    let reportschannel = message.guild.channels.find(`name`, "general");
+    if(!reportschannel) return message.channel.send("Не могу найти канал текстовой канал 'general'");
 
 
     message.delete().catch(O_o=>{});
